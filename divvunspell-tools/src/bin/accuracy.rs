@@ -302,7 +302,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     else if let Some(path) = matches.value_of("tsv-output") {
         let mut output = match std::fs::OpenOptions::new().append(true).open(path) {
             Ok(f) => Ok(f),
-            Err(_) => std::fs::OpenOptions::new().append(true).open(path)
+            Err(_) => std::fs::OpenOptions::new().create(true).append(true).open(path)
         }?;
         let md = output.metadata()?;
         if md.len() == 0 {
