@@ -56,7 +56,7 @@ jobs:
           args: --bin divvunspell --release --target x86_64-pc-windows-msvc
   deploy-bin-macos-arm64:
     needs: check
-    runs-on: macos-latest
+    runs-on: macos-11.0
     env:
       LZMA_API_STATIC: 1
     steps:
