@@ -149,7 +149,7 @@ jobs:
         with:
           command: ndk
           args: -t arm64-v8a build --lib --release --features internal_ffi
-  deploy-lib-android-aarch64:
+  deploy-lib-android-armv7:
     needs: check
     runs-on: ubuntu-latest
     env:
